@@ -21,8 +21,12 @@ on:
       environment:
         description: 'Environment to deploy to'
         required: true
-        default: 'development'
+        default: 'Development'
         type: environment
+        options:
+        - Development
+        - Staging
+        - Production
 
 jobs:
   build-and-test:
