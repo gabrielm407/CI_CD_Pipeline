@@ -1,10 +1,28 @@
 name: CI/CD Pipeline
 
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'development'
+        type: environment
 
 jobs:
   build-and-test:
@@ -24,9 +42,9 @@ jobs:
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
-
+      
       - name: Run application
-        run: dotnet run --project src
+        run: dotnet run --project ci-cd-pipeline-demo.csproj
 
       - name: Test
         run: dotnet test --no-build --verbosity normal
