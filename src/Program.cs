@@ -6,7 +6,7 @@ namespace CiCdPipelineDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, CI/CD Pipeline Demo!");
+            Console.WriteLine("CI/CD pipeline successful!");
         }
     }
 }
