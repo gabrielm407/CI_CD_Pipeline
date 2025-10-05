@@ -1,6 +1,7 @@
 # CI/CD Pipeline Demo (C#)
 
-This project demonstrates a simple CI/CD pipeline using GitHub Actions for a basic C# (.NET) application.
+This project demonstrates a simple CI/CD pipeline using GitHub Actions for a basic C# (.NET) application.  
+It also follows common practices of GitHub repository security practices.
 
 ## Project Structure
 
@@ -11,7 +12,8 @@ ci-cd-pipeline-demo
 ├── ci-cd-pipeline-demo.csproj
 ├── .github
 │   └── workflows
-│       └── pipeline.yml
+│       └── deployment.yml
+│       └── pull-request.yml
 └── README.md
 ```
 
@@ -35,7 +37,8 @@ ci-cd-pipeline-demo
 
 ## CI/CD Pipeline
 
-The pipeline is defined in `.github/workflows/pipeline.yml` and runs build and test jobs on push and pull request events.
+The pipeline is defined in `.github/workflows/deployment.yml` and runs build and test jobs on push and pull request events.  
+There is another pipeline called `.github/workflows/pull-request.yml` and this a pipeline whenever a pull request is created that runs checks on the authenticity and reliability of the code changes.
 
 ## License
 
