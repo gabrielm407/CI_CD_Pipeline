@@ -1,0 +1,5 @@
+# Visual Studio Code Extension that helps manage builds, dependencies, and projects locally
+CI_CD Pipeline.sln
+
+# Local building files
+obj/*
