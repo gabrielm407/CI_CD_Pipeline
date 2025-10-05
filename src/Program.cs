@@ -7,6 +7,11 @@ namespace CiCdPipelineDemo
         static void Main(string[] args)
         {
             Console.WriteLine("CI/CD pipeline successful!");
+
+            // Vulnerable code for CodeQL demonstration
+            Console.WriteLine("Enter a command to run:");
+            string cmd = Console.ReadLine();
+            System.Diagnostics.Process.Start(cmd); // command injection vulnerability
         }
     }
 }
