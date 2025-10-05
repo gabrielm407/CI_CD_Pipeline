@@ -3,3 +3,16 @@ CI_CD Pipeline.sln
 
 # Local building files
 obj/*
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
