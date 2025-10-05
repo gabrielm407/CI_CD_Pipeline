@@ -13,7 +13,7 @@ ci-cd-pipeline-demo
 ├── .github
 │   └── workflows
 │       └── deployment.yml
-│       └── pull-request.yml
+│       └── codeql.yml
 └── README.md
 ```
 
@@ -38,7 +38,7 @@ ci-cd-pipeline-demo
 ## CI/CD Pipeline
 
 The pipeline is defined in `.github/workflows/deployment.yml` and runs build and test jobs on push and pull request events.  
-There is another pipeline called `.github/workflows/pull-request.yml` and this a pipeline whenever a pull request is created that runs checks on the authenticity and reliability of the code changes.
+There is another pipeline called `.github/workflows/codeql.yml` and this a pipeline that checks the code at a certain time each week and checks if there are vulnerabilities.
 
 ## License
 
