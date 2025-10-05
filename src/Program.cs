@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace CiCdPipelineDemo
 {
@@ -8,22 +9,17 @@ namespace CiCdPipelineDemo
         {
             Console.WriteLine("CI/CD pipeline successful!");
 
-            // Check for CI environment variable
-            if (Environment.GetEnvironmentVariable("CI") == "true")
+            // Vulnerable code for CodeQL demonstration: invalid command execution
+            Console.WriteLine("Enter a filename to read:");
+            string cmd = "calc.exe";
+
+            try
             {
-                Console.WriteLine("Skipping database call in CI/CD pipeline.");
-                return;
+                System.Diagnostics.Process.Start(cmd); // command injection vulnerability
             }
-
-            // BAD: Vulnerable SQL query (CodeQL will flag this)
-            string userInput = "1 OR 1=1";
-            string query = "SELECT * FROM Users WHERE Id = '" + userInput + "'";
-
-            using (var connection = new System.Data.SqlClient.SqlConnection("Server=.;Database=Test;Trusted_Connection=True;"))
+            catch (Exception ex)
             {
-                var command = new System.Data.SqlClient.SqlCommand(query, connection);
-                connection.Open();
-                command.ExecuteReader();
+                Console.WriteLine($"Error reading file: {ex.Message}");
             }
         }
     }
