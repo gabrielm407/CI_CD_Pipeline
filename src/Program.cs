@@ -10,7 +10,7 @@ namespace CiCdPipelineDemo
 
             // Vulnerable code for CodeQL demonstration
             Console.WriteLine("Enter a command to run:");
-            string cmd = Console.ReadLine();
+            string cmd = Console.ReadLine("SELECT * FROM Users WHERE username = @username");
             System.Diagnostics.Process.Start(cmd); // command injection vulnerability
         }
     }
