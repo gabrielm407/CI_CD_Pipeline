@@ -1,7 +1,7 @@
 # CI/CD Pipeline Demo (C#)
 
 This project demonstrates a simple CI/CD pipeline using GitHub Actions for a basic C# (.NET) application.  
-It also follows common practices of GitHub repository security practices.
+It also follows common practices of GitHub repository security practices. 
 
 ## Project Structure
 
