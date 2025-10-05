@@ -13,5 +13,5 @@ jobs:
           BRANCH_NAME="${{ github.head_ref }}"
           if [[ ! "$BRANCH_NAME" =~ ^feature/ ]]; then
             echo "Error: Branch name must start with 'feature/'."
-            exit 1
+            exit 1 
           fi
